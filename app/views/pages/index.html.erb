@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<caption><big>Company Table</big></caption>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Comment</th>
+    <th>Active</th>
+    <th>Deleted</th>
+  </tr>
+  <tr>
+    <td>Imago</td>
+    <td>Ovo je kompanija</td>
+    <td>true</td>
+    <td>2017-11-11</td>
+    
+  </tr>
+  <tr>
+    <td>Ericsson</td>
+    <td>Ovo je kompanija</td>
+    <td>true</td>
+    <td>2015-10-07</td>
+  </tr>
+  <tr>
+    <td>Werkmann</td>
+    <td>Ovo je kompanija</td>
+    <td>false</td>
+    <td>/</td>
+
+  </tr>
+  <tr>
+    <td>HS Product</td>
+    <td>Ovo je kompanija</td>
+    <td>true</td>
+    <td>2013-12-08</td>
+  </tr>
+ 
+</table>
+
+
+<%= line_chart Company.group_by_day(:created_at).count %>
+
+</body>
+</html>
